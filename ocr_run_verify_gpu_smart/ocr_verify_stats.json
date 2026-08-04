@@ -1,0 +1,76 @@
+{
+  "segments": 672,
+  "video_duration": 1198.99,
+  "first_start": 0.0,
+  "last_end": 1198.99,
+  "timeline_coverage": 1.0,
+  "bad_timing": 0,
+  "overlaps": 0,
+  "gaps_gt_2s": 8,
+  "max_gap": 8.0,
+  "duplicate_adjacent": 0,
+  "first_text": "男人做梦也没想到",
+  "last_text": "看点是两个孤独的人慢慢靠近",
+  "largest_gaps": [
+    {
+      "before": 245,
+      "after": 246,
+      "gap": 8.0
+    },
+    {
+      "before": 309,
+      "after": 310,
+      "gap": 8.0
+    },
+    {
+      "before": 212,
+      "after": 213,
+      "gap": 7.0
+    },
+    {
+      "before": 155,
+      "after": 156,
+      "gap": 5.0
+    },
+    {
+      "before": 39,
+      "after": 40,
+      "gap": 4.0
+    },
+    {
+      "before": 260,
+      "after": 261,
+      "gap": 3.0
+    },
+    {
+      "before": 311,
+      "after": 312,
+      "gap": 3.0
+    },
+    {
+      "before": 492,
+      "after": 493,
+      "gap": 3.0
+    }
+  ],
+  "video": "C:\\Users\\tuann\\Downloads\\video\\Robot Mary Tập 4.mp4",
+  "json": "C:\\Users\\tuann\\OneDrive\\Tài liệu\\ai studio\\SRT_MAKER\\ocr_run_verify_gpu_smart\\Robot Mary Tập 4_ocr_transcription_zh.json",
+  "srt": "C:\\Users\\tuann\\OneDrive\\Tài liệu\\ai studio\\SRT_MAKER\\ocr_run_verify_gpu_smart\\Robot Mary Tập 4_zh.srt",
+  "device": "ocr_subtitle_gpu",
+  "compute": "rapidocr-directml",
+  "elapsed_seconds": 889.37,
+  "log_tail": [
+    "OCR van chay: 900/1199 frame (goi OCR 798, cache 0, bo qua 102).",
+    "OCR van chay: 901/1199 frame (goi OCR 798, cache 0, bo qua 103).",
+    "OCR van chay: 942/1199 frame (goi OCR 835, cache 0, bo qua 107).",
+    "OCR van chay: 983/1199 frame (goi OCR 873, cache 0, bo qua 110).",
+    "OCR van chay: 1001/1199 frame (goi OCR 885, cache 0, bo qua 116).",
+    "OCR van chay: 1035/1199 frame (goi OCR 917, cache 0, bo qua 118).",
+    "OCR van chay: 1067/1199 frame (goi OCR 949, cache 0, bo qua 118).",
+    "OCR van chay: 1101/1199 frame (goi OCR 981, cache 0, bo qua 120).",
+    "OCR van chay: 1142/1199 frame (goi OCR 1020, cache 0, bo qua 122).",
+    "OCR van chay: 1176/1199 frame (goi OCR 1052, cache 0, bo qua 124).",
+    "OCR smart-frame: goi OCR 1074 frame, dung cache 0 frame, bo qua gan giong 125 frame.",
+    "OCR: tu bo cum lap cuoi dong: 拾叁动漫"
+  ]
+}

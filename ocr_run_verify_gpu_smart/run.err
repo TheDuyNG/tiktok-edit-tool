@@ -1,0 +1,3 @@
+2026-08-01 19:39:54,450 - OrtInferSession - INFO: Windows 10 or above detected, try to use DirectML as primary provider
+2026-08-01 19:39:55,263 - OrtInferSession - INFO: Windows 10 or above detected, try to use DirectML as primary provider
+2026-08-01 19:39:55,402 - OrtInferSession - INFO: Windows 10 or above detected, try to use DirectML as primary provider

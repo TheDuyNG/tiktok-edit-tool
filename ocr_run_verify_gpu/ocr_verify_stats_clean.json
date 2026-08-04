@@ -1,0 +1,17 @@
+{
+  "srt": "ocr_run_verify_gpu\\Robot Mary Tập 4_zh_1.srt",
+  "segments": 687,
+  "first_start": 0.0,
+  "last_end": 1198.99,
+  "video_duration": 1198.99,
+  "coverage": 1.0,
+  "bad_timing": 0,
+  "overlaps": 0,
+  "gaps_gt_2s": 0,
+  "max_gap": 0,
+  "duplicate_adjacent": 0,
+  "watermark_segments": 0,
+  "first_text": "男人做梦也没想到",
+  "last_text": "看点是两个孤独的人慢慢靠近",
+  "largest_gaps": []
+}
