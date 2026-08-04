@@ -1,0 +1,17 @@
+{
+  "segments_raw": 15,
+  "segments_clean": 15,
+  "device": "ocr_subtitle_gpu",
+  "compute": "rapidocr-directml",
+  "json": "ocr_smoke_app_gpu\\ocr_smoke_30s_ocr_transcription_zh.json",
+  "srt": "ocr_smoke_app_gpu\\ocr_smoke_30s_zh.srt",
+  "elapsed": 20.953,
+  "logs": [
+    "OCR: trich frame vung phu de x=0.00-1.00, y=0.72-1.00, 1.0 fps.",
+    "OCR: RapidOCR providers: ['DmlExecutionProvider', 'CPUExecutionProvider']",
+    "OCR: dang tai RapidOCR bang DirectML GPU.",
+    "OCR van chay: 1/30 frame (goi OCR 1, cache 0, bo qua 0).",
+    "OCR smart-frame: goi OCR 23 frame, dung cache 0 frame, bo qua gan giong 7 frame.",
+    "OCR: tu bo cum lap cuoi dong: 动漫, 拾叁动漫"
+  ]
+}
