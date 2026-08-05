@@ -83,3 +83,57 @@ def test_image_similarity_is_conservative():
 
     assert transcriber._anh_gan_giong(bytes([10] * 20), bytes([10] * 20))
     assert not transcriber._anh_gan_giong(bytes([0] * 20), bytes([10] * 20))
+
+
+def test_rapidocr_sessions_are_switched_to_directml():
+    class FakeSession:
+        def __init__(self):
+            self.providers = ["CPUExecutionProvider"]
+
+        def set_providers(self, providers):
+            self.providers = providers
+
+        def get_providers(self):
+            return self.providers
+
+    class FakeInfer:
+        def __init__(self):
+            self.session = FakeSession()
+
+    class FakeComponent:
+        def __init__(self):
+            self.infer = FakeInfer()
+
+    class FakeOcr:
+        def __init__(self):
+            self.text_detector = FakeComponent()
+            self.text_cls = FakeComponent()
+            self.text_recognizer = FakeComponent()
+
+    ocr = FakeOcr()
+    OcrSubtitleTranscriber()._bat_directml_cho_rapidocr(ocr)
+
+    for component in (ocr.text_detector, ocr.text_cls, ocr.text_recognizer):
+        assert component.infer.session.providers == ["DmlExecutionProvider", "CPUExecutionProvider"]
+
+
+def test_paddleocr_3_configuration_is_tried_first():
+    received = []
+
+    def fake_paddle_ocr(**kwargs):
+        received.append(kwargs)
+        return object()
+
+    result = OcrSubtitleTranscriber()._tao_paddle_ocr(fake_paddle_ocr, False)
+
+    assert result is not None
+    assert received == [
+        {
+            "lang": "ch",
+            "use_textline_orientation": True,
+            "use_doc_orientation_classify": False,
+            "use_doc_unwarping": False,
+            "device": "cpu",
+            "enable_mkldnn": False,
+        }
+    ]

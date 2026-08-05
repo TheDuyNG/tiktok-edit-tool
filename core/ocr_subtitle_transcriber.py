@@ -155,13 +155,32 @@ class OcrSubtitleTranscriber:
         self._ghi_log(log, f"OCR: RapidOCR providers: {providers}")
         if "DmlExecutionProvider" in providers:
             self._ghi_log(log, "OCR: dang tai RapidOCR bang DirectML GPU.")
+            ocr = RapidOCR()
+            self._bat_directml_cho_rapidocr(ocr)
             return RapidOcrAdapter(
-                RapidOCR(det_use_dml=True, cls_use_dml=True, rec_use_dml=True),
+                ocr,
                 providers,
             )
         else:
             self._ghi_log(log, "OCR: khong co DirectML, tam dung RapidOCR tren CPU de doi chieu.")
         return RapidOcrAdapter(RapidOCR(), providers)
+
+    def _bat_directml_cho_rapidocr(self, ocr) -> None:
+        """Chuyen cac ONNX session cua RapidOCR 1.x sang DirectML."""
+
+        da_chuyen = 0
+        for ten_thanh_phan in ("text_detector", "text_cls", "text_recognizer"):
+            thanh_phan = getattr(ocr, ten_thanh_phan, None)
+            infer = getattr(thanh_phan, "infer", None) or getattr(thanh_phan, "session", None)
+            session = getattr(infer, "session", None)
+            if session is None or not hasattr(session, "set_providers"):
+                continue
+            session.set_providers(["DmlExecutionProvider", "CPUExecutionProvider"])
+            if "DmlExecutionProvider" in session.get_providers():
+                da_chuyen += 1
+
+        if da_chuyen == 0:
+            raise TranscriberError("RapidOCR khong tao duoc ONNX session DirectML.")
 
     def _paddle_co_cuda(self, log: LogCallback) -> bool:
         try:
@@ -177,6 +196,16 @@ class OcrSubtitleTranscriber:
 
     def _tao_paddle_ocr(self, PaddleOCR, use_gpu: bool):
         cac_cau_hinh = [
+            # PaddleOCR 3.x
+            {
+                "lang": "ch",
+                "use_textline_orientation": True,
+                "use_doc_orientation_classify": False,
+                "use_doc_unwarping": False,
+                "device": "gpu" if use_gpu else "cpu",
+                "enable_mkldnn": False,
+            },
+            # PaddleOCR 2.x
             {"use_angle_cls": True, "lang": "ch", "show_log": False, "enable_mkldnn": False, "use_gpu": use_gpu},
             {"use_angle_cls": True, "lang": "ch", "show_log": False, "use_gpu": use_gpu},
             {"use_angle_cls": True, "lang": "ch", "enable_mkldnn": False, "use_gpu": use_gpu},
@@ -187,7 +216,7 @@ class OcrSubtitleTranscriber:
         for cau_hinh in cac_cau_hinh:
             try:
                 return PaddleOCR(**cau_hinh)
-            except TypeError as loi:
+            except (TypeError, ValueError) as loi:
                 loi_cuoi = loi
                 continue
         if loi_cuoi:

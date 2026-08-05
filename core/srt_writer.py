@@ -6,6 +6,12 @@ import json
 from pathlib import Path
 
 import pysrt
+import sys
+
+# Support both ``python -m core.srt_writer`` and direct execution from an IDE.
+if __package__ in (None, ""):
+    project_root = Path(__file__).resolve().parents[1]
+    sys.path.insert(0, str(project_root))
 
 from core.models import SubtitleSegment
 from core.srt_validator import chuan_hoa_segments_cho_srt

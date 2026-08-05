@@ -1,7 +1,7 @@
 {
   "ngon_ngu_nguon": "zh",
   "ngon_ngu_dich": "vi",
-  "thu_muc_output": "C:\\Users\\tuann\\Downloads\\srt",
+  "thu_muc_output": "C:/Users/Ockyo/Downloads",
   "thu_muc_temp": "temp",
   "recognition_engine": "ocr_subtitle",
   "model_size": "medium",
