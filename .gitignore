@@ -1,0 +1,153 @@
+# =========================
+# Python cache
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# =========================
+# Python virtual environments
+# =========================
+.venv/
+venv/
+env/
+ENV/
+
+# =========================
+# Environment variables / secrets
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# IDE / Editor
+# =========================
+.vscode/
+.idea/
+*.code-workspace
+
+# =========================
+# Temporary folders
+# =========================
+temp/
+tmp/
+cache/
+.cache/
+logs/
+*.tmp
+*.temp
+*.log
+*.bak
+*.swp
+
+# =========================
+# Temporary audio files
+# =========================
+temp_*.mp3
+temp_*.wav
+tts_preview*.mp3
+tts_preview*.wav
+*_temp.mp3
+*_temp.wav
+*_preview.mp3
+*_preview.wav
+
+# Bỏ qua toàn bộ audio nếu không muốn đẩy audio lên GitHub
+# *.mp3
+# *.wav
+# *.m4a
+# *.flac
+
+# =========================
+# Build / distribution
+# =========================
+build/
+dist/
+output/
+outputs/
+release/
+*.egg-info/
+.eggs/
+
+# =========================
+# PyInstaller
+# =========================
+*.spec
+
+# =========================
+# Executables and installers
+# =========================
+*.exe
+*.msi
+*.dmg
+*.app
+unins*.exe
+unins*.dat
+
+# =========================
+# Models / large AI files
+# =========================
+models/
+model/
+checkpoints/
+weights/
+*.pt
+*.pth
+*.onnx
+*.ckpt
+*.safetensors
+*.bin
+
+# =========================
+# OCR generated folders
+# =========================
+ocr_run_verify/
+ocr_run_verify_app_gpu/
+ocr_run_verify_gpu/
+ocr_run_verify_gpu_smart/
+ocr_smoke_app_gpu/
+
+# =========================
+# Test-generated files
+# =========================
+.pytest_cache/
+.coverage
+htmlcov/
+
+# =========================
+# Operating system
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+# AUTOTTS caches and generated files
+AUTOTTS/__pycache__/
+AUTOTTS/.venv/
+AUTOTTS/.hf_cache/
+AUTOTTS/.mpl_cache/
+AUTOTTS/.ocr_cache/
+AUTOTTS/.tts_srt_cache/
+AUTOTTS/.vienue_ref_cache/
+AUTOTTS/_render_test/
+
+# Temporary/generated media
+AUTOTTS/*.wav
+AUTOTTS/*.mp3
+AUTOTTS/_ffmpeg_timeline_*.txt
+AUTOTTS/temp_*
+AUTOTTS/_verify_*
+AUTOTTS/_ngoc_*
+AUTOTTS/_omnivoice_*
+
+# Secrets and local settings
+AUTOTTS/.env
+**/__pycache__/
+**/.venv/
+**/.hf_cache/
+**/.mpl_cache/
+**/.ocr_cache/
+**/.tts_srt_cache/
+**/.vienue_ref_cache/
