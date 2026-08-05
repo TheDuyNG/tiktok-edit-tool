@@ -1,0 +1,11 @@
+# Optional local AI engines. Install only when those providers are needed.
+# Their Torch/CUDA requirements depend on the machine and GPU driver.
+-r requirements.txt
+--extra-index-url https://download.pytorch.org/whl/cu118
+
+# Python 3.12 + GTX 1070 (Pascal): keep the matching CUDA pair together.
+torch==2.6.0+cu118
+torchaudio==2.6.0+cu118
+soundfile>=0.12,<1
+omnivoice
+vieneu
