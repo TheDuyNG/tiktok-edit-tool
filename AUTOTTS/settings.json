@@ -1,0 +1,46 @@
+{
+    "srt_tab": {
+        "use_gpu": true,
+        "video_speed": 1.0,
+        "keep_silence": false,
+        "keep_video_effect_audio": false,
+        "keep_original_audio_in_silence": false,
+        "output_quality": "4K / 2160p",
+        "split_video_parts": 1,
+        "tts_speed": 1.2,
+        "tts_pitch": 1.2,
+        "omnivoice_batch_size": 1,
+        "omnivoice_mode": "Liền mạch toàn SRT",
+        "omnivoice_continuous": true,
+        "omnivoice_lock_continuous_audio_speed": false,
+        "background_music_paths": [
+            "C:/Users/tuann/Downloads/nhạc nền/Tình cảm/Dự Tính _ 預謀 (Ars Remix) (Hot Tiktok Douyin).mp3"
+        ],
+        "background_music_volume": 5.0,
+        "provider": "VieNeu Local GPU",
+        "voice": "Clone từ audio mẫu",
+        "preview_text": "Bộ phim kể về Minh, một chàng trai trẻ sống bình thường tại một thành phố đông đúc. Trong một lần tình cờ, Minh phát hiện mình sở hữu khả năng nhìn thấy những ký ức còn sót lại trên các đồ vật mà người khác chạm vào.",
+        "omnivoice_ref_audio_path": "C:/Users/tuann/Downloads/giọng đọc/ngoc huyen.wav",
+        "omnivoice_ref_text": ""
+    },
+    "editor_tab": {
+        "logo_height": 405,
+        "logo_opacity": 72,
+        "flip_h": true,
+        "flip_v": false,
+        "line_mode": "Ngẫu nhiên",
+        "line_strength": "Vừa",
+        "blur_strength": 63,
+        "export_ratio": "Bản Gốc",
+        "output_quality": "4K / 2160p",
+        "review_mode": false,
+        "subtitle_in_blur": true,
+        "draw_mode": "manual_blur",
+        "top_text": "TÊN PHIM ĐỈNH CAO",
+        "bottom_text": "Tập 1 - Quá Cuốn",
+        "text_font_size": 40,
+        "text_color_top": "#FFFF00",
+        "text_color_bot": "#FFFFFF",
+        "text_bg_color": "#000000"
+    }
+}
